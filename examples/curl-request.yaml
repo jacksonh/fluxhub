@@ -1,6 +1,6 @@
 ---
 jobs:
-  - name: 'Trigger Jenkins Tests'
+  - name: 'Make a curl Request on all *release events to dev workloads'
     match:
       events: ['release', 'autorelease']
       workloads: ['*-dev']
