@@ -21,9 +21,9 @@ type dockerSpec struct {
 }
 
 type matchSpec struct {
-	Events    []string
-	Service   string
-	Namespace string
+	Events     []string
+	Services   []string
+	Namespaces []string
 }
 
 func parseConfig(data []byte) (*configSpec, error) {

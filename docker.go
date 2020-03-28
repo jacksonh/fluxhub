@@ -15,8 +15,8 @@ import (
 
 func expandTemplateArgs(items []string) []string {
 	m := matchSpec{
-		Service:   "the-service",
-		Namespace: "the-namespace",
+		Services:   []string{"the-service"},
+		Namespaces: []string{"the-namespace"},
 	}
 	for _, item := range items {
 		t := template.Must(template.New("item").Parse(item))
