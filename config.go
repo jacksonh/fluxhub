@@ -21,18 +21,15 @@ type dockerSpec struct {
 }
 
 type matchSpec struct {
-	Events     []string
-	Services   []string
-	Namespaces []string
+	Events    []string
+	Workloads []string
 }
 
-func parseConfig(data []byte) (*configSpec, error) {
-	config := configSpec{}
-
-	err := yaml.Unmarshal(data, &config)
+func parseConfig(data []byte) (config configSpec, err error) {
+	err = yaml.Unmarshal(data, &config)
 	if err != nil {
-		return nil, err
+		return config, err
 	}
 
-	return &config, nil
+	return config, nil
 }

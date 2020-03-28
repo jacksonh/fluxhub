@@ -11,7 +11,7 @@ jobs:
   - name: 'Trigger Jenkins Tests'
     match:
       events: ['release', 'autorelease']
-      services: ['*-dev']
+      workloads: ['*-dev']
     docker:
       image: curlimages/curl
       command: ['/usr/bin/curl']
@@ -34,7 +34,7 @@ jobs:
 		t.Errorf("specified events were not found.")
 	}
 
-	if cfg.Jobs[0].Match.Services[0] != "*-dev" {
+	if cfg.Jobs[0].Match.Workloads[0] != "*-dev" {
 		t.Errorf("specified service was not found.")
 	}
 }

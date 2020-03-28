@@ -3,8 +3,7 @@ jobs:
   - name: 'Trigger Jenkins Tests'
     match:
       events: ['release', 'autorelease']
-      service: '*-dev'
-      namespace: '*-dev'
+      workloads: ['*-dev']
     docker:
       image: curlimages/curl
       command: ['/usr/bin/curl']
